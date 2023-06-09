@@ -28,7 +28,7 @@ async def root():
 
 @app.post('/dummy/', response_model=SchemaDummy)
 async def dummy(dummy: SchemaDummy):
-   db_dummy = ModelDummy(id=dummy.id,ballid = dummy.ballid,seriesid = dummy.seriesid,inningNumber=dummy.inningNumber,oversActual = dummy.oversActual,overNumber =dummy.overNumber,ballNumber=dummy.ballNumber,totalRuns=dummy.totalRuns,batsman=dummy.batsman,bowler=dummy.bowler,batsmanRuns=dummy.batsmanRuns,isFour=dummy.isFour,isSix=dummy.isSix,isWicket=dummy.isWicket,dismissalType=dummy.dismissalType,byes=dummy.byes,legbyes=dummy.legbyes,wides=dummy.wides,noballs=dummy.noballs,penalties=dummy.penalties,Comment=dummy.Comment)
+   db_dummy = ModelDummy(series_id = dummy.series_id,match_id=dummy.match_id,ball_id=dummy.ball_id,inningNumber=dummy.inningNumber,oversActual = dummy.oversActual,overNumber =dummy.overNumber,ballNumber=dummy.ballNumber,totalRuns=dummy.totalRuns,batsman=dummy.batsman,bowler=dummy.bowler,batsmanRuns=dummy.batsmanRuns,isFour=dummy.isFour,isSix=dummy.isSix,isWicket=dummy.isWicket,dismissalType=dummy.dismissalType,byes=dummy.byes,legbyes=dummy.legbyes,wides=dummy.wides,noballs=dummy.noballs,penalties=dummy.penalties,Comment=dummy.Comment)
    db.session.add(db_dummy)
    db.session.commit()
    return db_dummy

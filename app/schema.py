@@ -1,10 +1,12 @@
 # build a schema using pydantic
 from pydantic import BaseModel
 
+
+
 class Dummy(BaseModel):
-   id  : int
-   ballid :int
-   seriesid:int
+   series_id:int
+   match_id:int
+   ball_id:int
    inningNumber : int
    oversActual :float
    overNumber : int
@@ -13,9 +15,9 @@ class Dummy(BaseModel):
    batsman : str
    bowler  : str
    batsmanRuns : int
-   isFour : int
-   isSix : int
-   isWicket : int
+   isFour : bool
+   isSix : bool
+   isWicket : bool
    dismissalType :float
    byes : int
    legbyes : int
@@ -24,7 +26,6 @@ class Dummy(BaseModel):
    penalties : int
    Comment : str
    
-
    class Config:
        orm_mode = True
 
